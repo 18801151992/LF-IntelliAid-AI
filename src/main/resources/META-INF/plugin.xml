@@ -9,10 +9,15 @@
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.18801151992.lfintelliaidai.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+<!--        <toolWindow id="LFCodeAssistantWindow"-->
+<!--                    anchor="right"-->
+<!--                    factoryClass="com.longfor.intellij.ai.toolWindow.LFCodeAssistantWindow"-->
+<!--                    secondary="true"/>-->
+        <toolWindow id="LFWindow"
+                    anchor="right"
+                    factoryClass="com.longfor.intellij.ai.toolWindow.LFWindow"
+                    secondary="true"/>
     </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.18801151992.lfintelliaidai.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
+
 </idea-plugin>
