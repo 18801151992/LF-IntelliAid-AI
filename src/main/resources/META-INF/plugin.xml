@@ -9,15 +9,110 @@
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-<!--        <toolWindow id="LFCodeAssistantWindow"-->
-<!--                    anchor="right"-->
-<!--                    factoryClass="com.longfor.intellij.ai.toolWindow.LFCodeAssistantWindow"-->
-<!--                    secondary="true"/>-->
         <toolWindow id="LFWindow"
                     anchor="right"
                     factoryClass="com.longfor.intellij.ai.toolWindow.LFWindow"
                     secondary="true"/>
     </extensions>
 
+    <actions>
+
+        <!-- Define the 'Insert Code Into LF' action -->
+        <action id="com.longfor.intellij.ai.actions.InsertCodeIntoLfAction"
+                class="com.longfor.intellij.ai.actions.InsertCodeIntoLfAction" text="Insert Code Into LF"/>
+
+        <!-- Define the 'Explain this Code' action -->
+        <action id="com.longfor.intellij.ai.actions.ExplainThisCodeAction"
+                class="com.longfor.intellij.ai.actions.ExplainThisCodeAction"
+                text="Explain this Code">
+            <keyboard-shortcut first-keystroke="alt shift E" keymap="Mac OS X 10.5+"/>
+        </action>
+
+        <!-- Define the 'Generate Comment' action -->
+        <action id="com.longfor.intellij.ai.actions.GenerateCommentAction"
+                class="com.longfor.intellij.ai.actions.GenerateCommentAction" text="Generate Comment">
+            <keyboard-shortcut first-keystroke="alt shift V" keymap="Mac OS X 10.5+"/>
+        </action>
+
+        <!-- Define the 'Performance Check' action -->
+        <action id="com.longfor.intellij.ai.actions.PerformanceCheckAction"
+                class="com.longfor.intellij.ai.actions.PerformanceCheckAction" text="Performance Check">
+            <keyboard-shortcut first-keystroke="alt shift Q" keymap="Mac OS X 10.5+"/>
+        </action>
+
+        <!-- Define the 'Security Check' action -->
+        <action id="com.longfor.intellij.ai.actions.SecurityCheckAction"
+                class="com.longfor.intellij.ai.actions.SecurityCheckAction" text="Security Check">
+            <keyboard-shortcut first-keystroke="alt shift Z" keymap="Mac OS X 10.5+"/>
+        </action>
+
+        <!-- Define the 'Style Check' action -->
+        <action id="com.longfor.intellij.ai.actions.StyleCheckAction"
+                class="com.longfor.intellij.ai.actions.StyleCheckAction"
+                text="Style Check">
+            <keyboard-shortcut first-keystroke="alt shift U" keymap="Mac OS X 10.5+"/>
+        </action>
+
+        <!-- Define the 'Improve Readability' action -->
+        <action id="com.longfor.intellij.ai.actions.ImproveReadabilityAction"
+                class="com.longfor.intellij.ai.actions.ImproveReadabilityAction" text="Improve Readability"/>
+
+        <!-- Define the 'Clean Code' action -->
+        <action id="com.longfor.intellij.ai.actions.CleanCodeAction"
+                class="com.longfor.intellij.ai.actions.CleanCodeAction"
+                text="Clean Code"/>
+
+        <!-- Define the 'Generate Unit Test' action -->
+        <action id="com.longfor.intellij.ai.actions.GenerateUnitTestAction"
+                class="com.longfor.intellij.ai.actions.GenerateUnitTestAction" text="Generate Unit Test"/>
+
+        <!-- Define the 'Run Custom Prompt Template' action -->
+        <action id="com.longfor.intellij.ai.actions.RunCustomPromptTemplateAction"
+                class="com.longfor.intellij.ai.actions.RunCustomPromptTemplateAction"
+                text="Run Custom Prompt Template"/>
+
+        <!-- Define the 'LfName' submenu group -->
+        <group id="com.longfor.intellij.ai.plugin.LfNameGroup" text="LF AI" popup="true">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+
+            <reference ref="com.longfor.intellij.ai.actions.InsertCodeIntoLfAction"/>
+
+            <!-- Add a separator -->
+            <separator/>
+
+            <!-- Reference the 'Explain this Code' action in the 'LfName' submenu group -->
+            <reference ref="com.longfor.intellij.ai.actions.ExplainThisCodeAction"/>
+
+            <!-- Reference the 'Generate Comment' action in the 'LfName' submenu group -->
+            <reference ref="com.longfor.intellij.ai.actions.GenerateCommentAction"/>
+
+            <!-- Add a separator -->
+            <separator/>
+
+            <!-- Reference the 'Performance Check' action in the 'LfName' submenu group -->
+            <reference ref="com.longfor.intellij.ai.actions.PerformanceCheckAction"/>
+
+            <!-- Reference the 'Security Check' action in the 'LfName' submenu group -->
+            <reference ref="com.longfor.intellij.ai.actions.SecurityCheckAction"/>
+
+            <!-- Reference the 'Style Check' action in the 'LfName' submenu group -->
+            <reference ref="com.longfor.intellij.ai.actions.StyleCheckAction"/>
+
+            <!-- Add a separator -->
+            <separator/>
+
+            <reference ref="com.longfor.intellij.ai.actions.ImproveReadabilityAction"/>
+
+            <reference ref="com.longfor.intellij.ai.actions.CleanCodeAction"/>
+
+            <reference ref="com.longfor.intellij.ai.actions.GenerateUnitTestAction"/>
+
+            <!-- Add a separator -->
+            <separator/>
+
+            <!-- Reference the 'Run Custom Prompt Template' action in the 'LfName' submenu group -->
+            <reference ref="com.longfor.intellij.ai.actions.RunCustomPromptTemplateAction"/>
+        </group>
+    </actions>
 
 </idea-plugin>
