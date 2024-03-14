@@ -1,12 +1,14 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.18801151992.lfintelliaidai</id>
-    <name>LF-IntelliAid-AI Template</name>
-    <vendor>18801151992</vendor>
+    <name>LF-IntelliAid-AI</name>
+    <vendor>deven</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
+
+    <depends>com.intellij.modules.java</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <toolWindow id="LFWindow"
@@ -25,32 +27,32 @@
         <action id="com.longfor.intellij.ai.actions.ExplainThisCodeAction"
                 class="com.longfor.intellij.ai.actions.ExplainThisCodeAction"
                 text="Explain this Code">
-            <keyboard-shortcut first-keystroke="alt shift E" keymap="Mac OS X 10.5+"/>
+            <keyboard-shortcut first-keystroke="alt shift E" keymap="$default"/>
         </action>
 
         <!-- Define the 'Generate Comment' action -->
         <action id="com.longfor.intellij.ai.actions.GenerateCommentAction"
                 class="com.longfor.intellij.ai.actions.GenerateCommentAction" text="Generate Comment">
-            <keyboard-shortcut first-keystroke="alt shift V" keymap="Mac OS X 10.5+"/>
+            <keyboard-shortcut first-keystroke="alt shift V" keymap="$default"/>
         </action>
 
         <!-- Define the 'Performance Check' action -->
         <action id="com.longfor.intellij.ai.actions.PerformanceCheckAction"
                 class="com.longfor.intellij.ai.actions.PerformanceCheckAction" text="Performance Check">
-            <keyboard-shortcut first-keystroke="alt shift Q" keymap="Mac OS X 10.5+"/>
+            <keyboard-shortcut first-keystroke="alt shift Q" keymap="$default"/>
         </action>
 
         <!-- Define the 'Security Check' action -->
         <action id="com.longfor.intellij.ai.actions.SecurityCheckAction"
                 class="com.longfor.intellij.ai.actions.SecurityCheckAction" text="Security Check">
-            <keyboard-shortcut first-keystroke="alt shift Z" keymap="Mac OS X 10.5+"/>
+            <keyboard-shortcut first-keystroke="alt shift Z" keymap="$default"/>
         </action>
 
         <!-- Define the 'Style Check' action -->
         <action id="com.longfor.intellij.ai.actions.StyleCheckAction"
                 class="com.longfor.intellij.ai.actions.StyleCheckAction"
                 text="Style Check">
-            <keyboard-shortcut first-keystroke="alt shift U" keymap="Mac OS X 10.5+"/>
+            <keyboard-shortcut first-keystroke="alt shift U" keymap="$default"/>
         </action>
 
         <!-- Define the 'Improve Readability' action -->
